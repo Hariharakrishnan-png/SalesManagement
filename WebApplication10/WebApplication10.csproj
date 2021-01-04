@@ -188,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Database Script\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
