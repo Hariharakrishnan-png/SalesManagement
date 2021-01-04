@@ -22,7 +22,8 @@ namespace WebApplication10.Controllers
         //Web.database_Access_Layer.db dblayer = new MVCLogin.database_Access_Layer.db();
         public ActionResult Index()
         {
-            return View();
+            return View(); 
+            //ewy78ywe
         }
         [HttpPost]
         public ActionResult Index(LoginModel model)
