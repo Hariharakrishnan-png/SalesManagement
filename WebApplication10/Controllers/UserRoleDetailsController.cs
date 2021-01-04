@@ -26,7 +26,7 @@ namespace WebApplication10.Controllers
             var password = Session["Password"].ToString();
             LoginModel objDetails = new LoginModel();
             CONNECTION();
-            //ghg
+            //ghgddd
             con.Open();
             SqlCommand cmd = new SqlCommand("UserLogin", con);
             cmd.CommandType = CommandType.StoredProcedure;
