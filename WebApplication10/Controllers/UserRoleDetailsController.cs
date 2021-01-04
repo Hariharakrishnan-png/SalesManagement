@@ -25,7 +25,7 @@ namespace WebApplication10.Controllers
             var email = Session["EmailId"].ToString();
             var password = Session["Password"].ToString();
             LoginModel objDetails = new LoginModel();
-            CONNECTION();         
+            CONNECTION();      
 
             con.Open();
             SqlCommand cmd = new SqlCommand("UserLogin", con);
