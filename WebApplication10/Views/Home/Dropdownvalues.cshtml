@@ -1,0 +1,26 @@
+﻿@model WebApplication10.Models.LoginModel
+@{
+    ViewBag.Title = "Hello Admin!! :";
+}
+
+<h2>Dropdownvalues</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+   
+        Select User: @Html.DropDownListFor(m => m.DepartmentId, new SelectList(Model.usersinfo, "DepartmentId", "DepartmentName"), "Select User", new { @class = "yourCSSclass" })
+    @Html.ActionLink("go","Create")
+</body>
+</html>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" >
+    $("#yourCSSclass").on('click', function () {
+        create();
+    });</script>
+    
+

@@ -1,0 +1,79 @@
+﻿@model WebApplication10.Models.LoginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    h2 {
+        color: black;
+        text-align: center;
+    }
+
+    form {
+        color: black;
+        text-align: center;
+    }
+</style>
+<h2>Login</h2>
+
+@{
+    Layout = "~/Views/Shared/layoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <div>
+        <form  align="center" method="post">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <h3 class="alert-danger">@ViewBag.ErrorMessage</h3>
+            }
+            <table>
+                <tr><td>Admin ID</td><td><input name="adminid" type="text" style="width:200px" /></td></tr>
+                <tr><td>Password</td><td><input name="password" type="password" style="width:200px" /></td></tr>
+            
+                <tr><td></td><td><input value="Login" type="submit" style="width:200px" /></td></tr>
+                
+            </table>
+        </form>
+
+        @*<form>
+               c
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>UserName</label>
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.TextBoxFor(m => m.UserName)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Password</label>
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.TextBoxFor(m => m.Password)
+                    </div>
+                </div>
+                <div class="row">
+                    <input value="Login" type="submit" style="width:200px" />
+                </div>
+            </form>*@
+    </div>
+    @{
+        if (TempData["msg"] != null)
+        {
+            <script type="text/javascript">
+                alert('@TempData["msg"]');
+            </script>
+        }
+    }
+</body>
+</html>
