@@ -31,7 +31,7 @@ namespace WebApplication10.Controllers
             SqlCommand cmd = new SqlCommand("UserLogin", con);
             cmd.CommandType = CommandType.StoredProcedure;           
             cmd.Parameters.AddWithValue("@Emailid", email);
-            cmd.Parameters.AddWithValue("@Password", password);                       
+            cmd.Parameters.AddWithValue("@Password", password);                     
 
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())
@@ -71,7 +71,7 @@ namespace WebApplication10.Controllers
             
             CONNECTION();
 
-            con.Open();
+            con.Open(); 
             
             SqlCommand cmd = new SqlCommand("sp_password_update", con);
             cmd.CommandType = CommandType.StoredProcedure;
