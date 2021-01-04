@@ -26,5 +26,7 @@ namespace WebApplication10.Models
         [NotMapped] // Does not effect with your database
         [Compare("NewPassword")]
         public string ConfirmPassword { get; set; }
+        public string EmailId { get; set; }
+
     }
 }

@@ -19,23 +19,23 @@ namespace WebApplication10.Controllers
             string constr = ConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
             con = new SqlConnection(constr);
         }
-        
+
         public ActionResult UserRoleIndex()
         {
             var email = Session["EmailId"].ToString();
             var password = Session["Password"].ToString();
             LoginModel objDetails = new LoginModel();
-            CONNECTION();      
-
+            CONNECTION();
+            //ghg
             con.Open();
             SqlCommand cmd = new SqlCommand("UserLogin", con);
-            cmd.CommandType = CommandType.StoredProcedure;           
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Emailid", email);
-            cmd.Parameters.AddWithValue("@Password", password);                     
+            cmd.Parameters.AddWithValue("@Password", password);
 
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())
-            {               
+            {
                 objDetails.EmailId = Convert.ToString((sdr["Emailid"]));
                 objDetails.Password = Convert.ToString(sdr["Password"]);
 
@@ -48,8 +48,8 @@ namespace WebApplication10.Controllers
 
             if (!objDetails.IsPasswordChanged)
             {
-                //return View("ChangePassword");
-                return RedirectToAction("Index");
+                return View("ChangePassword");
+                // return View("Index11");
 
 
 
@@ -78,7 +78,7 @@ namespace WebApplication10.Controllers
            
             cmd.Parameters.AddWithValue("@Password", model.NewPassword);
 
-            return View();
+            return RedirectToAction("UserRoleIndex");
         }
         public string Encrypt(string sData)
         {
