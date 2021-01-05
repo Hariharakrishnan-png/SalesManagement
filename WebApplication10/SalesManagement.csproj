@@ -118,9 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeadController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessagePasswordValidator.cs" />
     <Compile Include="Controllers\PasswordChangesController.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LeadsModel.cs" />
     <Compile Include="Models\log.cs" />
     <Compile Include="Models\login.cs" />
     <Compile Include="Models\UserRoleDetailsModel.cs" />
@@ -191,7 +194,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Database Script\" />
+    <Folder Include="Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Lead\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
