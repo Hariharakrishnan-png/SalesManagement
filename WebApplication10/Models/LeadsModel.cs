@@ -7,6 +7,7 @@ namespace WebApplication10.Models
 {
     public class LeadsModel
     {
+
         [Display(Name = "LeadId")]
         public long LeadId { get; set; }
 
@@ -25,7 +26,7 @@ namespace WebApplication10.Models
         [Required(ErrorMessage = "DOB is Required ")]
         [Display(Name = "DateOfBirth")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
 
         [Display(Name = "Gender")]
@@ -70,16 +71,36 @@ namespace WebApplication10.Models
         [Required(ErrorMessage = "LeadSource is Required")]
         public string LeadSource { get; set; }
 
+        [Display(Name = "Type")]
+        [Required(ErrorMessage = "Type is Required")]
+        public string Type { get; set; }
+
+        [Display(Name = "Job Title")]
+        [Required(ErrorMessage = "JobTitle is Required")]
+        public string JobTitle { get; set; }
+
+        [Display(Name = "Company Name")]
+        [Required(ErrorMessage = "CompanyName is Required")]
+        public string CompanyName { get; set; }
+
+        [Display(Name = "Company Website")]
+        [Required]
+        [Url(ErrorMessage = "Invalid URL!")]
+        public string CompanyWebsite { get; set; }
+
         [Display(Name = "Meeting Date")]
         [Required(ErrorMessage = "MeetingDate is Required")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime MeetingDate { get; set; }
 
+        public DateTime CreatedDate { get; set; }
+
         public List<LeadSources> LeadSourceList { get; internal set; }
         public List<Cities> CityList { get; internal set; }
         public List<States> StateList { get; set; }
         public List<Countries> CountryList { get; internal set; }
+        public List<Types> TypeList { get; internal set; }
     }
 
     public class LeadSources
@@ -115,4 +136,13 @@ namespace WebApplication10.Models
         public string CountryName { get; set; }
 
     }
+
+    public class Types
+    {
+        public int TypeId { get; set; }
+
+        public string TypeName { get; set; }
+
+    }
+
 }
